@@ -47,7 +47,7 @@ class Game
   def ask_next_letter
     puts 'Введите следующую букву:'
     letter = ''
-    letter = $stdin.gets.chomp while letter == ''
+    letter = $stdin.gets.downcase.chomp while letter == ''
     next_step(letter)
   end
 
