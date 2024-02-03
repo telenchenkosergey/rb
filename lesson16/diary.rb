@@ -20,7 +20,7 @@ current_time = time.strftime('%H:%M')
 f = File.new("#{current_path}/#{file_name}.txt", 'a:UTF-8')
 f.puts current_time
 f.puts sep
-all_lines.each { |line| f.puts line }
+all_lines.each { |record| f.puts record }
 f.puts sep
 f.close
 
