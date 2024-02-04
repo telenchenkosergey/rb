@@ -10,12 +10,12 @@ class ResultPrinter
 
     while counter <= 7
       file_name = "#{current_path}/img/#{counter}.txt"
-      if File.exist?(file_name)
+      begin
         f = File.new(file_name, 'r:UTF-8')
         @status_img << f.read
         f.close
-      else
-        @status_img << "\n[ Изображение отсутствует ]\n"
+      rescue Errno::ENOENT
+        @status_img << '***Такого файла нет***'
       end
       counter += 1
     end
