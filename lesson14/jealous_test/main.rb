@@ -2,8 +2,8 @@
 
 current_path = "./#{File.dirname(__FILE__)}"
 
-require "#{current_path}/questionnaire"
-require "#{current_path}/result_reader"
+require "#{current_path}/lib/questionnaire"
+require "#{current_path}/lib/result_reader"
 
 questions_file = "#{current_path}/data/questions.txt"
 

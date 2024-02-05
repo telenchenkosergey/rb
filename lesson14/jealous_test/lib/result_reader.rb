@@ -11,11 +11,11 @@ class ResultReader
   def read_from(file_name)
     if File.exist?(file_name)
       f = File.new(file_name, 'r:UTF-8')
-      content = f.read
+      content = f.readlines
       f.close
       content
     else
-      '*** Файл не найден ***'
+      puts '*** Файл не найден ***'
     end
   end
 
