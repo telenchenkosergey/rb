@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-current_path = './' + File.dirname(__FILE__)
+current_path = "./#{File.dirname(__FILE__)}"
 
 require "#{current_path}/lib/game"
 require "#{current_path}/lib/result_printer"
