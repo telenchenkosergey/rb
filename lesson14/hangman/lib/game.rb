@@ -16,12 +16,12 @@ class Game
     word.split('')
   end
 
-  def is_good?(letter)
+  def good?(letter)
     @letters.include?(letter) ||
-       letter == 'е' && @letters.include?('ё') ||
-       letter == 'ё' && @letters.include?('е') ||
-       letter == 'и' && @letters.include?('й') ||
-       letter == 'й' && @letters.include?('и')
+      letter == 'е' && @letters.include?('ё') ||
+      letter == 'ё' && @letters.include?('е') ||
+      letter == 'и' && @letters.include?('й') ||
+      letter == 'й' && @letters.include?('и')
   end
 
   def add_letter_to(letters, letter)
@@ -60,7 +60,7 @@ class Game
     return if @status == :lost || @status == :won
     return if repeated?(letter)
 
-    if is_good?(letter)
+    if good?(letter)
       add_letter_to(@good_letters, letter)
 
       case letter
