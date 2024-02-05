@@ -5,18 +5,7 @@ class ResultReader
   attr_reader :result
 
   def initialize(questionnaire)
-    @result = read_from("./data/results/results#{show_result(questionnaire.points)}.txt")
-  end
-
-  def read_from(file_name)
-    if File.exist?(file_name)
-      f = File.new(file_name, 'r:UTF-8')
-      content = f.readlines
-      f.close
-      content
-    else
-      puts '*** Файл не найден ***'
-    end
+    @result = questionnaire.read_from("./data/results/results#{show_result(questionnaire.points)}.txt")
   end
 
   def show_result(points)
