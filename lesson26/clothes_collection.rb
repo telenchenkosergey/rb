@@ -4,9 +4,8 @@
 class ClothesCollection
   attr_reader :types, :same_type_clothing
 
-  def initialize(cloth_arr)
-    @types = clothing_types(cloth_arr)
-    @same_type_clothing = {}
+  def initialize
+    @types = clothing_types()
   end
 
   def clothing_types(arr)
