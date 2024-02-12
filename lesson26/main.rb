@@ -24,4 +24,5 @@ clothes.each do |c|
 end
 
 cc = ClothesCollection.new(collection)
-cc.clothing_types
+puts cc.types
+puts cc.same_type_clothing

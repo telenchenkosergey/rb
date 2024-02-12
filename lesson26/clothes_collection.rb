@@ -5,21 +5,27 @@ class ClothesCollection
   attr_reader :types, :same_type_clothing
 
   def initialize(cloth_arr)
-    @cc = cloth_arr
-    @types = []
+    @types = clothing_types(cloth_arr)
     @same_type_clothing = {}
   end
 
-  def clothing_types
-    @cc.each do |cloth|
-      @types << cloth.type
-      @types.uniq!
+  def clothing_types(arr)
+    types = []
+    arr.each do |cloth|
+      types << cloth.type
+      types.uniq!
     end
+    types
   end
 
-  def same_type_clothing
-    @types.each do |type|
-        @same_type_clothing[type] = []
+  def same_type_clothing(arr)
+    arr.each do |cloth|
+      if !@same_type_clothing.has_key?(cloth.type)
+        @same_type_clothing[cloth.type] = []
+        @same_type_clothing[cloth.type] << cloth
+      else
+        @same_type_clothing[cloth.type] << cloth
+      end
     end
   end
 end
