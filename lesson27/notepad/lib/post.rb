@@ -9,16 +9,15 @@ class Post
   def self.create(type_index)
     post_types[type_index].new
   end
+
   def initialize
     @created_at = Time.now
     @text = nil
   end
 
-  def read_from_console
-  end
+  def read_from_console; end
 
-  def to_strings
-  end
+  def to_strings; end
 
   def save
     f = File.new(file_name, 'w:UTF-8')
