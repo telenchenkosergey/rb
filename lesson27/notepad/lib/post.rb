@@ -2,6 +2,13 @@
 
 # Post class
 class Post
+  def self.post_types
+    [Memo, Link, Task]
+  end
+
+  def self.create(type_index)
+    post_types[type_index].new
+  end
   def initialize
     @created_at = Time.now
     @text = nil
