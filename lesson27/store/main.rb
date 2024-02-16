@@ -4,10 +4,13 @@ require_relative './lib/product'
 require_relative './lib/book'
 require_relative './lib/film'
 
-f1 = Film.new('Леон', 990, 5, 1994, 'Люк Бессон')
-f2 = Film.new('Дурак', 390, 1, 2014, 'Юрий Быков')
-b1 = Book.new('Идиот', 1500, 10, 'роман', 'Федор Достоевский')
+f1 = Film.new(title: 'Леон', price: 990, director: 'Люк Бессон')
+f1.amount = 6
+f1.year = 1994
+
+b1 = Book.new(genre: 'роман', price: 150, author: 'Стивен Кинг')
+b1.amount = 6
+b1.title = 'Кладбище домашних животных'
 
 puts f1
-puts f2
 puts b1

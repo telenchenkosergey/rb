@@ -2,14 +2,15 @@
 
 # Film class
 class Film < Product
-  attr_reader :year, :director
-  def initialize(name, price, amount, year, director)
-    super(name, price, amount)
-    @year = year
-    @director = director
+  attr_accessor :year, :director
+
+  def initialize(options)
+    super(options)
+    @year = options[:year]
+    @director = options[:director]
   end
 
   def to_s
-    "Фильм #{@name}, #{@year}, реж. #{@director}, #{@price} руб. (осталось - #{@amount})"
+    "Фильм '#{@title}', #{@year}, реж. #{@director}, #{@price} руб. (осталось - #{@amount})"
   end
 end

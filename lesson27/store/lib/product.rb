@@ -2,11 +2,11 @@
 
 # Product class
 class Product
-  attr_reader :price, :amount, :name
+  attr_accessor :price, :amount, :title
 
-  def initialize(name, price, amount)
-    @name = name
-    @price = price
-    @amount = amount
+  def initialize(options)
+    @title = options[:title]
+    @price = options[:price]
+    @amount = options[:amount]
   end
 end

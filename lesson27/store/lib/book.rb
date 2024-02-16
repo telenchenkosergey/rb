@@ -2,14 +2,15 @@
 
 # Book class
 class Book < Product
-  attr_reader :genre, :author
-  def initialize(name, price, amount, genre, author)
-    super(name, price, amount)
-    @genre = genre
-    @author = author
+  attr_accessor :genre, :author
+
+  def initialize(options)
+    super(options)
+    @genre = options[:genre]
+    @author = options[:author]
   end
 
   def to_s
-    "Книга #{@name}, #{@genre}, автор - #{@author}, #{@price} руб. (осталось - #{@amount})"
+    "Книга '#{@title}', #{@genre}, автор - #{@author}, #{@price} руб. (осталось - #{@amount})"
   end
 end
