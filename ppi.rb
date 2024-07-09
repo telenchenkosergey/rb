@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 def ppi(size, width, height)
-  ppi = (Math.sqrt(width**2 + height**2) / size).round
+  (Math.sqrt(width**2 + height**2) / size).round
 end
 
 puts 'Screen diagonal size in inches:'
